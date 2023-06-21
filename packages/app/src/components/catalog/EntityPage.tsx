@@ -59,6 +59,7 @@ import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
 // Custom Imports below here
 import {
   EntityGithubPullRequestsContent,
+  EntityGithubPullRequestsOverviewCard,
   isGithubPullRequestsAvailable,
 } from '@roadiehq/backstage-plugin-github-pull-requests';
 
@@ -126,6 +127,14 @@ const overviewContent = (
     <Grid item md={6} xs={12}>
       <EntityCatalogGraphCard variant="gridItem" height={400} />
     </Grid>
+
+    <EntitySwitch>
+      <EntitySwitch.Case if={isGithubPullRequestsAvailable}>
+        <Grid item md={6}>
+          <EntityGithubPullRequestsOverviewCard />
+        </Grid>
+      </EntitySwitch.Case>
+    </EntitySwitch>
 
     <Grid item md={4} xs={12}>
       <EntityLinksCard />
