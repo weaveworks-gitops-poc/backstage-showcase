@@ -1,0 +1,14 @@
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: backstage-cluster-api-plugin
+rules:
+  - apiGroups:
+      - cluster.x-k8s.io
+    resources:
+      - clusters
+    verbs:
+      - get
+      - watch
+      - list

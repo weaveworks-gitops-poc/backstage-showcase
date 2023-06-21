@@ -1,0 +1,24 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: carts-service-cronjob
+  namespace: backstage
+  labels:
+    app.kubernetes.io/component: carts-service
+    backstage.io/kubernetes-id: carts-service
+spec:
+  schedule: "15 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: cleanup
+            image: busybox:latest
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - echo "Cleaning up expired carts"
+          restartPolicy: OnFailure
