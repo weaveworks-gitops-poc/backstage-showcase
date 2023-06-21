@@ -62,6 +62,9 @@ import {
   EntityGithubPullRequestsOverviewCard,
   isGithubPullRequestsAvailable,
 } from '@roadiehq/backstage-plugin-github-pull-requests';
+import {
+  GithubIssuesCard,
+} from '@backstage/plugin-github-issues';
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -155,11 +158,17 @@ const serviceEntityPage = (
       {cicdContent}
     </EntityLayout.Route>
 
+    <EntityLayout.Route path="/issues" title="GitHub Issues">
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <GithubIssuesCard />
+        </Grid>
+      </Grid>
+    </EntityLayout.Route>
 
     <EntityLayout.Route
       path="/pull-requests"
       title="Pull Requests"
-        if={isGithubPullRequestsAvailable}
     >
       <EntityGithubPullRequestsContent />
     </EntityLayout.Route>
