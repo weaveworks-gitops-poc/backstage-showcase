@@ -8,10 +8,14 @@ metadata:
     app.kubernetes.io/component: carts-service
     backstage.io/kubernetes-id: carts-service
 spec:
-  schedule: "15 * * * *"
+  schedule: "*/3 * * * *"
   jobTemplate:
     spec:
       template:
+        metadata:
+          labels:
+            app.kubernetes.io/component: carts-service
+            backstage.io/kubernetes-id: carts-service
         spec:
           containers:
           - name: cleanup
