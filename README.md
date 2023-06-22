@@ -11,6 +11,8 @@ You will need a GitHub account, and a Kubernetes cluster.
 
 You will need to create a GitHub Oauth Client ID and Secret, follow the instructions [here](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app) to create one.
 
+The [Backstage GitHub provider](https://backstage.io/docs/auth/github/provider/) provides details on the Authorization callback URL.
+
 Then run the installation script:
 
 ```sh
