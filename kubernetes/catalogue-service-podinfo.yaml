@@ -1,0 +1,45 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: podinfo
+  namespace: backstage
+spec:
+  interval: 1m
+  url: https://stefanprodan.github.io/podinfo
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: podinfo
+  namespace: backstage
+  labels:
+    backstage.io/kubernetes-id: catalogue-service
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: podinfo
+      version: '6.3.6'
+      sourceRef:
+        kind: HelmRepository
+        name: podinfo
+        namespace: backstage
+      interval: 1m
+  postRenderers:
+  - kustomize: 
+     patchesStrategicMerge:
+      - kind: Deployment
+        apiVersion: apps/v1
+        metadata:
+          name: podinfo
+          labels:
+            backstage.io/kubernetes-id: catalogue-service
+        spec:
+          selector:
+            matchLabels:
+              backstage.io/kubernetes-id: catalogue-service
+          template:
+            metadata:
+              labels:
+                backstage.io/kubernetes-id: catalogue-service
