@@ -27,10 +27,6 @@ import {
   isOrphan,
 } from '@backstage/plugin-catalog';
 import {
-  isGithubActionsAvailable,
-  EntityGithubActionsContent,
-} from '@backstage/plugin-github-actions';
-import {
   EntityUserProfileCard,
   EntityGroupProfileCard,
   EntityMembersListCard,
@@ -63,13 +59,16 @@ import {
   EntityGithubPullRequestsOverviewCard,
   isGithubPullRequestsAvailable,
 } from '@roadiehq/backstage-plugin-github-pull-requests';
-import { GithubIssuesCard } from '@backstage/plugin-github-issues';
 import {
   FluxEntityGitRepositoriesCard,
   FluxEntityHelmReleasesCard,
   FluxEntityOCIRepositoriesCard,
   FluxEntityKustomizationsCard,
 } from '@weaveworksoss/backstage-plugin-flux';
+import {
+  EntityCircleCIContent,
+  isCircleCIAvailable,
+} from '@backstage/plugin-circleci';
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -80,11 +79,9 @@ const techdocsContent = (
 );
 
 const cicdContent = (
-  // This is an example of how you can implement your company's logic in entity page.
-  // You can for example enforce that all components of type 'service' should use GitHubActions
   <EntitySwitch>
-    <EntitySwitch.Case if={isGithubActionsAvailable}>
-      <EntityGithubActionsContent />
+    <EntitySwitch.Case if={isCircleCIAvailable}>
+      <EntityCircleCIContent />
     </EntitySwitch.Case>
 
     <EntitySwitch.Case>
@@ -278,7 +275,7 @@ const defaultEntityPage = (
 
 const componentPage = (
   <EntitySwitch>
-    <EntitySwitch.Case if={isComponentType('service')}>
+    <EntitySwitch.Case if={isComponentType(['service', 'controller'])}>
       {serviceEntityPage}
     </EntitySwitch.Case>
 

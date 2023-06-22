@@ -1,0 +1,43 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: weave-gitops
+  description: Weave GitOps
+  links:
+    - url: https://github.com/weaveworks/weave-gitops
+      title: Source
+      icon: web
+spec:
+  owner: pesto-team
+  domain: gitops
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: pesto-team
+  description: Team that owns a number of Weave GitOps Components
+spec:
+  type: team
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: gitopssets-controller
+  description: A controller for automating the generation of resources in the cluster in a declarative manner.
+  tags:
+    - go
+    - controller
+  annotations:
+    github.com/project-slug: weaveworks/gitopssets-controller
+    circleci.com/project-slug: github/weaveworks/gitopssets-controller
+  links:
+    - url: https://github.com/weaveworks/gitopssets-controller
+      title: Source
+      icon: github
+spec:
+  type: controller
+  lifecycle: production
+  owner: pesto-team
+  system: weave-gitops

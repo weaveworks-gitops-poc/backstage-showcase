@@ -47,11 +47,10 @@ integrations:
     #   token: ${GHE_TOKEN}
 
 proxy:
-  ### Example for how to add a proxy endpoint for the frontend.
-  ### A typical reason to do this is to handle HTTPS and CORS for internal services.
-  # '/test':
-  #   target: 'https://example.com'
-  #   changeOrigin: true
+  '/circleci/api':
+    target: https://circleci.com/api/v1.1
+    headers:
+      Circle-Token: ${CIRCLECI_AUTH_TOKEN}
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
@@ -87,6 +86,10 @@ catalog:
     - type: file
       target: ../../templates/all.yaml
       allow: [Template]
+    - type: file
+      target: ../../examples/gitopssets-controller.yaml
+      rules:
+        - allow: [Component, Group, System]
 
 gitops:
   baseUrl: ${WEAVE_GITOPS_URL}
