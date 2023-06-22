@@ -5,7 +5,12 @@ This is a Demo Backstage application.
 
 Prerequisites:
 
-You will need a GitHub account, and a Kubernetes cluster.
+You will need a GitHub account, and a Kubernetes cluster with a bare minimum of [Flux](https://fluxcd.io/) installed.
+
+If you don't have Flux installed this will install the minimum set of resources:
+```sh
+flux install --components source-controller,kustomize-controller,helm-controller
+```
 
 # Running Locally
 
