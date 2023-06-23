@@ -5,6 +5,9 @@ if [ $# -lt 2 ]; then
   exit 1
 fi
 
+echo "Installing node modules for Backstage - this may take some time."
+yarn install
+
 echo "This will prepare a cluster for Backstage\n"
 echo "DO NOT APPLY THIS TO A PRODUCTION CLUSTER\n"
 echo "Applying demo Kubernetes resources to your cluster\n"
