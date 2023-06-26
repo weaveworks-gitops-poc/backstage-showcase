@@ -1,12 +1,12 @@
 #!/bin/sh
 
-if [ $# -lt 2 ]; then
-  echo "usage: ./install GITHUB_CLIENT_ID GITHUB_CLIENT_SECRET"
+if [ $# -lt 3 ]; then
+  echo "usage: ./install GITHUB_CLIENT_ID GITHUB_CLIENT_SECRET GITHUB_TOKEN"
   exit 1
 fi
 
 echo "Installing node modules for Backstage - this may take some time."
-yarn install
+GITHUB_TOKEN=$3 yarn install
 
 echo "This will prepare a cluster for Backstage\n"
 echo "DO NOT APPLY THIS TO A PRODUCTION CLUSTER\n"
