@@ -63,9 +63,8 @@ import {
   EntityGithubPullRequestsOverviewCard,
   isGithubPullRequestsAvailable,
 } from '@roadiehq/backstage-plugin-github-pull-requests';
-import {
-  GithubIssuesCard,
-} from '@backstage/plugin-github-issues';
+import { GithubIssuesCard } from '@backstage/plugin-github-issues';
+import { FluxEntityHelmReleasesCard } from '@weaveworksoss/backstage-plugin-flux';
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -143,6 +142,11 @@ const overviewContent = (
     <Grid item md={4} xs={12}>
       <EntityLinksCard />
     </Grid>
+
+    <Grid item md={8} xs={12}>
+      <FluxEntityHelmReleasesCard />
+    </Grid>
+
     <Grid item md={8} xs={12}>
       <EntityHasSubcomponentsCard variant="gridItem" />
     </Grid>
@@ -171,10 +175,7 @@ const serviceEntityPage = (
       </Grid>
     </EntityLayout.Route>
 
-    <EntityLayout.Route
-      path="/pull-requests"
-      title="Pull Requests"
-    >
+    <EntityLayout.Route path="/pull-requests" title="Pull Requests">
       <EntityGithubPullRequestsContent />
     </EntityLayout.Route>
 
