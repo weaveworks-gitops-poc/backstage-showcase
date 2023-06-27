@@ -8,3 +8,4 @@ resources:
  - catalogue-service-podinfo.yaml
  - verified-oci-repository.yaml
  - payments-service-cronjob.yaml
+ - verified-git-repository.yaml
