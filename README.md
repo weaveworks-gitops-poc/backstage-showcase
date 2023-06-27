@@ -39,7 +39,9 @@ To uninstall, run the uninstall script (which will remove the backstage namespac
 ./uninstall.sh
 ```
 
-## _(optional)_ Install `weave-gitops` to demonstrate linking through to resources details.
+## _(optional)_ Install `weave-gitops` to demonstrate linking through to resources details
+
+Backstage shows the important information about each resource, you can click through to the weave-gitops UI to see even more details. The URL is provided by the `WEAVE_GITOPS_URL` environment variable as shown above.
 
 Follow the weave-gitops [installation instructions](https://docs.gitops.weave.works/docs/next/open-source/getting-started/install-OSS/).
 
