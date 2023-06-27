@@ -11,6 +11,12 @@ If you don't have Flux installed this will install the minimum set of resources:
 flux install --components source-controller,kustomize-controller,helm-controller
 ```
 
+# Demo Kubernetes Resources
+
+ * The "Catalogue Service" has a [HelmRelease](http://localhost:3000/catalog/default/component/catalogue-service) and [Pod Logs](http://localhost:3000/catalog/default/component/catalogue-service/kubernetes])
+ * The "Carts Service" has a [CronJob](http://localhost:3000/catalog/default/component/carts-service/kubernetes) which has Pod Logs
+ * The "Payment Service" has a [CronJob](http://localhost:3000/catalog/default/component/payments-service/kubernetes) which has Pod Logs and will always fail.
+
 # Running Locally
 
 You will need to create a GitHub Oauth Client ID and Secret, follow the instructions [here](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app) to create one.
