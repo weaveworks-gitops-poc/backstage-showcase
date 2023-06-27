@@ -33,7 +33,7 @@ backend:
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
   reading:
     allow:
-    - host: raw.githubusercontent.com
+      - host: raw.githubusercontent.com
 
 integrations:
   github:
@@ -85,6 +85,9 @@ catalog:
     - type: url
       target: https://github.com/weaveworks/backstage-sockshop/blob/main/all.yaml
 
+gitops:
+  baseUrl: ${WEAVE_GITOPS_URL}
+
 kubernetes:
   serviceLocatorMethod:
     type: 'multiTenant'
@@ -92,7 +95,8 @@ kubernetes:
     - type: 'config'
       clusters:
         - url: ${K8S_API_ENDPOINT}
-          name: demo-cluster
+          # Weave-Gitops OSS uses the name "Default" for the base cluster
+          name: Default
           authProvider: 'serviceAccount'
           skipTLSVerify: true
           skipMetricsLookup: true
