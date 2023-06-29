@@ -38,6 +38,11 @@ import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
+import {
+  FluxEntityGitRepositoriesCard,
+  FluxEntityHelmReleasesCard,
+  FluxEntityOCIRepositoriesCard,
+} from '@weaveworksoss/backstage-plugin-flux';
 
 const app = createApp({
   components: {

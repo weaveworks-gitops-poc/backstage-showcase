@@ -64,7 +64,11 @@ import {
   isGithubPullRequestsAvailable,
 } from '@roadiehq/backstage-plugin-github-pull-requests';
 import { GithubIssuesCard } from '@backstage/plugin-github-issues';
-import { FluxEntityHelmReleasesCard } from '@weaveworksoss/backstage-plugin-flux';
+import {
+  FluxEntityGitRepositoriesCard,
+  FluxEntityHelmReleasesCard,
+  FluxEntityOCIRepositoriesCard,
+} from '@weaveworksoss/backstage-plugin-flux';
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -161,6 +165,20 @@ const serviceEntityPage = (
 
     <EntityLayout.Route path="/kubernetes" title="Kubernetes">
       <EntityKubernetesContent refreshIntervalMs={30000} />
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/weaveworks-flux" title="Weave Flux">
+      <Grid container spacing={3} alignItems="stretch">
+        <Grid item md={12}>
+          <FluxEntityHelmReleasesCard />
+        </Grid>
+        <Grid item md={12}>
+          <FluxEntityOCIRepositoriesCard />
+        </Grid>
+        <Grid item md={12}>
+          <FluxEntityGitRepositoriesCard />
+        </Grid>
+      </Grid>
     </EntityLayout.Route>
 
     <EntityLayout.Route path="/ci-cd" title="CI/CD">

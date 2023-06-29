@@ -7833,7 +7833,7 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.4.tgz#cd667bcfdd025213aafb7ca5915a932590acdcdc"
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
 
-"@types/react-dom@*", "@types/react-dom@<18.0.0", "@types/react-dom@^17":
+"@types/react-dom@*", "@types/react-dom@<18.0.0":
   version "17.0.20"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.20.tgz#e0c8901469d732b36d8473b40b679ad899da1b53"
   integrity sha512-4pzIjSxDueZZ90F52mU3aPoogkHIoSIDG+oQ+wQK7Cy2B9S+MvOqY0uEA/qawKz381qrEDkvpwyt8Bm31I8sbA==
@@ -8221,6 +8221,27 @@
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@weaveworksoss/backstage-plugin-flux/-/backstage-plugin-flux-0.3.0.tgz#e1e8e3b0ea6b905a2ae5c97459ffc486ffa5d490"
   integrity sha512-SBDdPnnSlW0/oLQmoZn4aXAUYabnOg3QS3Xczr9/k1U1O2XeuvUl3hZcpxP3noMFatqCQKzQ7q89KJPJo760xQ==
+  dependencies:
+    "@backstage/catalog-model" "^1.3.0"
+    "@backstage/core-components" "^0.13.1"
+    "@backstage/core-plugin-api" "^1.5.1"
+    "@backstage/plugin-catalog-react" "^1.6.0"
+    "@backstage/plugin-kubernetes" "^0.9.1"
+    "@backstage/plugin-kubernetes-common" "^0.6.3"
+    "@backstage/theme" "^0.3.0"
+    "@material-ui/core" "^4.12.2"
+    "@material-ui/icons" "^4.9.1"
+    "@material-ui/lab" "4.0.0-alpha.61"
+    "@weaveworks/weave-gitops" "^0.23.0"
+    luxon "^3.3.0"
+    react-query "^3.39.3"
+    react-use "^17.2.4"
+    styled-components "^5.3.0"
+
+"@weaveworksoss/backstage-plugin-flux@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@weaveworksoss/backstage-plugin-flux/-/backstage-plugin-flux-0.4.0.tgz#3e6b72b7629c7b08f04b8ef1a027b99575ecd492"
+  integrity sha512-5FLIpFDPoYn6iRlm78g+nmDT7wG72G8wg4h9wE5GvFH/BW5XxuBzVqOO/46KsOE7sNz1FT8El0f0CFsc5cs9DA==
   dependencies:
     "@backstage/catalog-model" "^1.3.0"
     "@backstage/core-components" "^0.13.1"
