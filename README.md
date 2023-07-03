@@ -24,7 +24,7 @@ You will need to create a GitHub Oauth Client ID and Secret, follow the instruct
 
 The [Backstage GitHub provider](https://backstage.io/docs/auth/github/provider/) provides details on the Authorization callback URL.
 
-Then run the installation script with 3 arguments:
+Then run the installation script with 2 arguments:
 
 ```sh
 ./install.sh <insert GitHub Oauth client id> <insert GitHub Oauth client secret>
