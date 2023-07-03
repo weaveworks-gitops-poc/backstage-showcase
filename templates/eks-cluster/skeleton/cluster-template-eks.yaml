@@ -1,0 +1,73 @@
+---
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: Cluster
+metadata:
+  name: "${{ values.clusterName }}"
+spec:
+  clusterNetwork:
+    pods:
+      cidrBlocks: ["192.168.0.0/16"]
+  infrastructureRef:
+    kind: AWSManagedCluster
+    apiVersion: infrastructure.cluster.x-k8s.io/v1beta2
+    name: "${{ values.clusterName }}"
+  controlPlaneRef:
+    kind: AWSManagedControlPlane
+    apiVersion: controlplane.cluster.x-k8s.io/v1beta2
+    name: "${{ values.clusterName }}-control-plane"
+---
+kind: AWSManagedCluster
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta2
+metadata:
+  name: "${{ values.clusterName }}"
+spec: {}
+---
+kind: AWSManagedControlPlane
+apiVersion: controlplane.cluster.x-k8s.io/v1beta2
+metadata:
+  name: "${{ values.clusterName }}-control-plane"
+spec:
+  region: "${{ values.awsRegion }}"
+  sshKeyName: "${{ values.awsSshKeyName }}"
+  version: "${{ values.kubernetesVersion }}"
+---
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: MachineDeployment
+metadata:
+  name: "${{ values.clusterName }}-md-0"
+spec:
+  clusterName: "${{ values.clusterName }}"
+  replicas: ${WORKER_MACHINE_COUNT}
+  selector:
+    matchLabels:
+  template:
+    spec:
+      clusterName: "${{ values.clusterName }}"
+      version: "${{ values.kubernetesVersion }}"
+      bootstrap:
+        configRef:
+          name: "${{ values.clusterName }}-md-0"
+          apiVersion: bootstrap.cluster.x-k8s.io/v1beta2
+          kind: EKSConfigTemplate
+      infrastructureRef:
+        name: "${{ values.clusterName }}-md-0"
+        apiVersion: infrastructure.cluster.x-k8s.io/v1beta2
+        kind: AWSMachineTemplate
+---
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta2
+kind: AWSMachineTemplate
+metadata:
+  name: "${{ values.clusterName }}-md-0"
+spec:
+  template:
+    spec:
+      instanceType: "${{ values.awsNodeMachineType }}"
+      iamInstanceProfile: "nodes.cluster-api-provider-aws.sigs.k8s.io"
+      sshKeyName: "${{ values.awsSshKeyName }}"
+---
+apiVersion: bootstrap.cluster.x-k8s.io/v1beta2
+kind: EKSConfigTemplate
+metadata:
+  name: "${{ values.clusterName }}-md-0"
+spec:
+  template: {}

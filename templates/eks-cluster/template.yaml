@@ -1,0 +1,100 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: eks-capi-template
+  title: Create an EKS Cluster
+  description: Create an EKS Cluster through GitOps
+spec:
+  owner: sockshop-team
+  type: resource
+
+  parameters:
+    - title: Fill in some steps
+      required:
+        - clusterName
+      properties:
+        # TODO: Validate this is a valid Cluster Name
+        clusterName:
+          title: Cluster Name
+          type: string
+          description: Unique cluster name
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        awsRegion:
+          title: AWS Region
+          type: string
+          description: AWS Region
+          default: eu-west-1
+          enum:
+            - eu-west-1
+            - eu-west-2
+            - eu-south-1
+        kubernetesVersion:
+          title: Kubernetes Version
+          type: string
+          description: Kubernetes version for Cluster
+          default: "1.26"
+          enum:
+            - "1.27"
+            - "1.26"
+            - "1.25"
+            - "1.24"
+            - "1.23"
+        awsNodeMachineType:
+          title: Node Machine Type
+          type: string
+          description: AWS Instance type for Nodes
+          default: t3.large
+          enum:
+            - t3.large
+            - t3.medium
+            - t3.small
+        awsSshKeyName:
+          title: SSH Key Name
+          type: string
+          description: SSH Key Name for access to this Cluster
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+
+    - title: Choose a location
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+
+  steps:
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
+      input:
+        url: ./skeleton
+        values:
+          clusterName: ${{ parameters.clusterName }}
+          awsRegion: ${{ parameters.awsRegion }}
+          kubernetesVersion: ${{ parameters.kubernetesVersion }}
+          awsNodeMachineType: ${{ parameters.awsNodeMachineType }}
+          awsSshKeyName: ${{ parameters.awsSshKeyName }}
+
+    - id: publish
+      name: Publish
+      action: publish:github:pull-request
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        title: Create new EKS Cluster ${{ parameters.clusterName}}
+        description: Merge this pull request to create a new EKS Cluster via CAPI
+        targetPath: './clusters/${{ parameters.clusterName }}'
+        sourcePath: ${{ steps['fetch-base'].output.path }}
+        branchName: create-cluster-${{ parameters.clusterName }}
+
+  output:
+    links:
+      - title: View Pull Request
+        url: ${{ steps['publish'].output.remoteUrl }}

@@ -80,10 +80,13 @@ catalog:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location, User, Group]
+    - allow: [Component, System, API, Resource, Location, User, Group, Template]
   locations:
     - type: url
       target: https://github.com/weaveworks/backstage-sockshop/blob/main/all.yaml
+    - type: file
+      target: ../../templates/all.yaml
+      allow: [Template]
 
 gitops:
   baseUrl: ${WEAVE_GITOPS_URL}
