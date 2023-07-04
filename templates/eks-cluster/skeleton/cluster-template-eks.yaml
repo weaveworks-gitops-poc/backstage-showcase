@@ -37,7 +37,7 @@ metadata:
   name: "${{ values.clusterName }}-md-0"
 spec:
   clusterName: "${{ values.clusterName }}"
-  replicas: ${WORKER_MACHINE_COUNT}
+  replicas: ${{ values.workerMachineCount }}
   selector:
     matchLabels:
   template:

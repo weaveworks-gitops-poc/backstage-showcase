@@ -12,6 +12,7 @@ spec:
     - title: Fill in some steps
       required:
         - clusterName
+        - awsSshKeyName
       properties:
         # TODO: Validate this is a valid Cluster Name
         clusterName:
@@ -50,11 +51,15 @@ spec:
             - t3.large
             - t3.medium
             - t3.small
+        workerMachineCount:
+          title: Machine Count
+          type: integer
+          description: Number of nodes for this Cluster
+          default: 3
         awsSshKeyName:
           title: SSH Key Name
           type: string
           description: SSH Key Name for access to this Cluster
-          ui:autofocus: true
           ui:options:
             rows: 5
 
@@ -82,6 +87,7 @@ spec:
           kubernetesVersion: ${{ parameters.kubernetesVersion }}
           awsNodeMachineType: ${{ parameters.awsNodeMachineType }}
           awsSshKeyName: ${{ parameters.awsSshKeyName }}
+          workerMachineCount: ${{ parameters.workerMachineCount }}
 
     - id: publish
       name: Publish
