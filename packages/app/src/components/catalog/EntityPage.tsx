@@ -59,6 +59,7 @@ import {
   EntityGithubPullRequestsOverviewCard,
   isGithubPullRequestsAvailable,
 } from '@roadiehq/backstage-plugin-github-pull-requests';
+import { GithubIssuesCard } from '@backstage/plugin-github-issues';
 import {
   FluxEntityGitRepositoriesCard,
   FluxEntityHelmReleasesCard,
