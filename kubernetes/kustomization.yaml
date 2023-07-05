@@ -3,6 +3,8 @@ resources:
  - carts-cronjob.yaml
  - cluster-role.yaml
  - cluster-role-binding.yaml
+ - sync-cluster-role.yaml
+ - sync-cluster-role-binding.yaml
  - secret.yaml
  - service-account.yaml
  - catalogue-service-podinfo.yaml
