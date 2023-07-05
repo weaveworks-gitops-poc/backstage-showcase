@@ -15,7 +15,7 @@ metadata:
   name: podinfo
   namespace: backstage
   labels:
-    backstage.io/kubernetes-id: catalogue-service
+    backstage.io/kubernetes-id: shipping-service
 spec:
   interval: 10m
   url: https://github.com/stefanprodan/podinfo

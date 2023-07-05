@@ -14,9 +14,18 @@ flux install --components source-controller,kustomize-controller,helm-controller
 
 # Demo Kubernetes Resources
 
- * The "Catalogue Service" has a [HelmRelease](http://localhost:3000/catalog/default/component/catalogue-service) and [Pod Logs](http://localhost:3000/catalog/default/component/catalogue-service/kubernetes])
- * The "Carts Service" has a [CronJob](http://localhost:3000/catalog/default/component/carts-service/kubernetes) which has Pod Logs
- * The "Payment Service" has a [CronJob](http://localhost:3000/catalog/default/component/payments-service/kubernetes) which has Pod Logs and will always fail.
+* The "Catalogue Service"
+  * [HelmRelease](http://localhost:3000/catalog/default/component/catalogue-service)
+  * [Deployment](http://localhost:3000/catalog/default/component/catalogue-service/kubernetes) with Pod Logs
+  * [HelmRepository](http://localhost:3000/catalog/default/component/catalogue-service/weaveworks-flux)
+* The "Carts Service"
+  * [CronJob](http://localhost:3000/catalog/default/component/carts-service/kubernetes)
+* The "Payment Service"
+  * [CronJob](http://localhost:3000/catalog/default/component/payments-service/kubernetes) which has Pod Logs and will always fail.
+* The "Orders Service"
+  * [Verified OCI Repository](http://localhost:3000/catalog/default/component/orders-service/weaveworks-flux)
+* The "Shipping Service"
+  * [Verified Git Repository](http://localhost:3000/catalog/default/component/shipping-service/weaveworks-flux)
 
 # Running Locally
 
