@@ -1,7 +1,6 @@
 resources:
  - namespace.yaml
  - carts-cronjob.yaml
- - cluster-role.yaml
  - cluster-role-binding.yaml
  - sync-cluster-role.yaml
  - sync-cluster-role-binding.yaml
