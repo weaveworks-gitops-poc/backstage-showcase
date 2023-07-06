@@ -25,7 +25,7 @@ flux install --components source-controller,kustomize-controller,helm-controller
 * The "Orders Service"
   * [Verified OCI Repository](http://localhost:3000/catalog/default/component/orders-service/weaveworks-flux)
 * The "Shipping Service"
-  * [Verified Git Repository](http://localhost:3000/catalog/default/component/shipping-service/weaveworks-flux)
+  * [Verified Git Repository](http://localhost:3000/catalog/default/component/shipping-service/weaveworks-flux) and Kustomization
 
 # Running Locally
 

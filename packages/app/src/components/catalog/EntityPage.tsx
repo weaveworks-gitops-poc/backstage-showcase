@@ -68,6 +68,7 @@ import {
   FluxEntityGitRepositoriesCard,
   FluxEntityHelmReleasesCard,
   FluxEntityOCIRepositoriesCard,
+  FluxEntityKustomizationsCard,
 } from '@weaveworksoss/backstage-plugin-flux';
 
 const techdocsContent = (
@@ -131,6 +132,11 @@ const overviewContent = (
     <Grid item md={6}>
       <EntityAboutCard variant="gridItem" />
     </Grid>
+
+    <Grid item md={8} xs={12}>
+      <FluxEntityHelmReleasesCard />
+    </Grid>
+
     <Grid item md={6} xs={12}>
       <EntityCatalogGraphCard variant="gridItem" height={400} />
     </Grid>
@@ -145,10 +151,6 @@ const overviewContent = (
 
     <Grid item md={4} xs={12}>
       <EntityLinksCard />
-    </Grid>
-
-    <Grid item md={8} xs={12}>
-      <FluxEntityHelmReleasesCard />
     </Grid>
 
     <Grid item md={8} xs={12}>
@@ -171,6 +173,9 @@ const serviceEntityPage = (
       <Grid container spacing={3} alignItems="stretch">
         <Grid item md={12}>
           <FluxEntityHelmReleasesCard />
+        </Grid>
+        <Grid item md={12}>
+          <FluxEntityKustomizationsCard />
         </Grid>
         <Grid item md={12}>
           <FluxEntityOCIRepositoriesCard />

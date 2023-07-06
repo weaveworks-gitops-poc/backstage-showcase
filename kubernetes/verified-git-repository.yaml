@@ -12,7 +12,7 @@ data:
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: podinfo
+  name: shipping-service-podinfo
   namespace: backstage
   labels:
     backstage.io/kubernetes-id: shipping-service

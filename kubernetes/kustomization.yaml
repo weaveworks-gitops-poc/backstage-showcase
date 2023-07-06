@@ -10,3 +10,4 @@ resources:
  - verified-oci-repository.yaml
  - payments-service-cronjob.yaml
  - verified-git-repository.yaml
+ - shipping-service-kustomization.yaml
