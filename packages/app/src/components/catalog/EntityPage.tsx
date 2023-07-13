@@ -66,10 +66,9 @@ import {
 import { GithubIssuesCard } from '@backstage/plugin-github-issues';
 import {
   FluxEntityGitRepositoriesCard,
-  FluxEntityHelmReleasesCard,
   FluxEntityHelmRepositoriesCard,
   FluxEntityOCIRepositoriesCard,
-  FluxEntityKustomizationsCard,
+  FluxEntityDeploymentsCard,
 } from '@weaveworksoss/backstage-plugin-flux';
 
 const techdocsContent = (
@@ -135,7 +134,7 @@ const overviewContent = (
     </Grid>
 
     <Grid item md={8} xs={12}>
-      <FluxEntityHelmReleasesCard />
+      <FluxEntityDeploymentsCard />
     </Grid>
 
     <Grid item md={6} xs={12}>
@@ -170,17 +169,11 @@ const serviceEntityPage = (
       <EntityKubernetesContent refreshIntervalMs={30000} />
     </EntityLayout.Route>
 
-    <EntityLayout.Route path="/weaveworks-flux" title="Weave Flux">
+    <EntityLayout.Route path="/weaveworks-flux" title="Flux Sources">
       <Grid container spacing={3} alignItems="stretch">
         <h2>You can mix and match components on a page - add the Cards for the Flux resources you use!</h2>
         <Grid item md={12}>
-          <FluxEntityHelmReleasesCard />
-        </Grid>
-        <Grid item md={12}>
           <FluxEntityHelmRepositoriesCard />
-        </Grid>
-        <Grid item md={12}>
-          <FluxEntityKustomizationsCard />
         </Grid>
         <Grid item md={12}>
           <FluxEntityGitRepositoriesCard />
