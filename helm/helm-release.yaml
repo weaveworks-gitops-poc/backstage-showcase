@@ -1,0 +1,38 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: backstage
+  namespace: backstage
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: backstage
+      version: 1.5.0
+      sourceRef:
+        kind: HelmRepository
+        name: backstage-charts
+        namespace: backstage
+      interval: 60m
+  values:
+    # See the chart documentation for the values below
+    backstage:
+      image:
+        # NOTE: YOU MUST CHANGE THESE!
+        registry: # e.g. docker.io
+        repository: # e.g. my-org/my-repo
+        tag: # e.g. 3e3d613
+      # extraAppConfig:
+      #   - filename: app-config.local.yaml
+      #     configMapRef: backstage-app-config
+      extraEnvVarsSecrets:
+        - backstage-oauth-secret
+    # Note you will need to apply the RBAC in this repository to allow the SA to
+    # access resources.
+    serviceAccount:
+      name: backstage
+    extraEnvVars:
+    - name: BASE_URL
+      # NOTE YOU MUST CHANGE THIS!
+      value: http://localhost:7007/

@@ -81,3 +81,9 @@ In short:
 > ```
 
 Login to http://localhost:9001 with the username `admin` and the password you provided when creating the dashboard.
+
+## Deploying with Kubernetes
+
+Please read the Backstage documentation on deploying with [Kubernetes](https://backstage.io/docs/deployment/k8s/).
+
+A Helm chart is provided along with instructions and a Makefile in the [helm](./helm) subdirectory.
