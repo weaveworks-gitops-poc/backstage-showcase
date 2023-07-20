@@ -23,7 +23,7 @@ echo "DO NOT APPLY THIS TO A PRODUCTION CLUSTER"
 while true; do
   read -p "Do you wish to prepare your cluster for this Backstage showcase? " yn
   case $yn in
-      [Yy]* ) install_backstage; break;;
+      [Yy]* ) install_backstage $1 $2; break;;
       [Nn]* ) exit;;
       * ) echo "Please answer y or n.";;
   esac
