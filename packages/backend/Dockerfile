@@ -40,7 +40,9 @@ RUN --mount=type=cache,target=/home/node/.cache/yarn,sharing=locked,uid=1000,gid
     yarn install --frozen-lockfile --production --network-timeout 300000
 
 # Then copy the rest of the backend bundle, along with any other files we might want.
-COPY --chown=node:node packages/backend/dist/bundle.tar.gz app-config*.yaml ./
+COPY --chown=node:node packages/backend/dist/bundle.tar.gz  ./
+COPY --chown=node:node app-config.kubernetes.yaml ./app-config.yaml
+COPY --chown=node:node templates ./templates
 RUN tar xzf bundle.tar.gz && rm bundle.tar.gz
 
-CMD ["node", "packages/backend", "--config", "app-config.yaml", "--config", "app-config.production.yaml"]
+CMD ["node", "packages/backend", "--config", "app-config.kubernetes.yaml", "--config", "app-config.local.yaml"]

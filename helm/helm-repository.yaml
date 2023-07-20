@@ -1,0 +1,10 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: backstage-charts
+  namespace: backstage
+spec:
+  interval: 60m
+  type: oci
+  url: oci://ghcr.io/backstage/charts
