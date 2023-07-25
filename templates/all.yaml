@@ -6,3 +6,4 @@ metadata:
 spec:
   targets:
     - ./eks-cluster/template.yaml
+    - ./nodejs/template.yaml
