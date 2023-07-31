@@ -1,6 +1,8 @@
 # [Backstage](https://backstage.io)
 
-This is a Demo Backstage application.
+This is a Demo Backstage app.
+
+This app is **NOT SUPPORTED**.
 
 ## Prerequisites:
 
