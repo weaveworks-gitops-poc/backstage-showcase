@@ -8295,10 +8295,10 @@
     "@uiw/codemirror-extensions-basic-setup" "4.21.3"
     codemirror "^6.0.0"
 
-"@weaveworksoss/backstage-plugin-flux@^0.7.3":
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/@weaveworksoss/backstage-plugin-flux/-/backstage-plugin-flux-0.7.3.tgz#a76b650e0a2d503865b1d609380ff1d770d88bf1"
-  integrity sha512-nxctKWzJ1L7ZY1Ro1W7xb+rdjwLZVq/nicXx529hZiFGqCkY1CmusqlQv5cfy0+y3XHKvFn8GImOz9umuRJGiw==
+"@weaveworksoss/backstage-plugin-flux@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@weaveworksoss/backstage-plugin-flux/-/backstage-plugin-flux-0.8.0.tgz#a63d4baff7dc26ce27b62ad44ef27666c831eb4f"
+  integrity sha512-qtfPm1lSyvmBQTpCPFy+i//iPdEJLzHFPrxGU8pgL9v2dX2Ts+ovdGAKGeFive020V5UdpBo8w694KuICK+YeA==
   dependencies:
     "@backstage/catalog-model" "^1.3.0"
     "@backstage/core-components" "^0.13.1"
@@ -8757,7 +8757,7 @@ anymatch@^3.0.3, anymatch@~3.1.2:
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
     "@roadiehq/backstage-plugin-github-pull-requests" "^2.5.11"
-    "@weaveworksoss/backstage-plugin-flux" "^0.7.3"
+    "@weaveworksoss/backstage-plugin-flux" "^0.8.0"
     history "^5.0.0"
     react "^17.0.2"
     react-dom "^17.0.2"

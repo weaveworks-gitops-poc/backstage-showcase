@@ -65,10 +65,10 @@ import {
 } from '@roadiehq/backstage-plugin-github-pull-requests';
 import { GithubIssuesCard } from '@backstage/plugin-github-issues';
 import {
-  FluxEntityGitRepositoriesCard,
-  FluxEntityHelmRepositoriesCard,
-  FluxEntityOCIRepositoriesCard,
-  FluxEntityDeploymentsCard,
+  EntityFluxGitRepositoriesCard,
+  EntityFluxHelmRepositoriesCard,
+  EntityFluxOCIRepositoriesCard,
+  EntityFluxDeploymentsCard,
 } from '@weaveworksoss/backstage-plugin-flux';
 
 const techdocsContent = (
@@ -134,7 +134,7 @@ const overviewContent = (
     </Grid>
 
     <Grid item md={8} xs={12}>
-      <FluxEntityDeploymentsCard />
+      <EntityFluxDeploymentsCard />
     </Grid>
 
     <Grid item md={6} xs={12}>
@@ -173,13 +173,13 @@ const serviceEntityPage = (
       <Grid container spacing={3} alignItems="stretch">
         <h2>You can mix and match components on a page - add the Cards for the Flux resources you use!</h2>
         <Grid item md={12}>
-          <FluxEntityHelmRepositoriesCard />
+          <EntityFluxHelmRepositoriesCard />
         </Grid>
         <Grid item md={12}>
-          <FluxEntityGitRepositoriesCard />
+          <EntityFluxGitRepositoriesCard />
         </Grid>
         <Grid item md={12}>
-          <FluxEntityOCIRepositoriesCard />
+          <EntityFluxOCIRepositoriesCard />
         </Grid>
       </Grid>
     </EntityLayout.Route>
