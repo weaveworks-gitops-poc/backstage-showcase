@@ -3211,7 +3211,7 @@
     winston "^3.2.1"
     yn "^4.0.0"
 
-"@backstage/plugin-kubernetes-common@^0.6.3", "@backstage/plugin-kubernetes-common@^0.6.5":
+"@backstage/plugin-kubernetes-common@^0.6.5":
   version "0.6.5"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-kubernetes-common/-/plugin-kubernetes-common-0.6.5.tgz#8764cb5c6ba0647098f596b3bd18be906ed32086"
   integrity sha512-b764fy1/XLTvmlJJiHiCu1jshjBEb5HtPeYQiphr59/7Z3Cz7WfkeyI4+WZO+iLwrPO9oqSxZ7SZudPMwUublA==
@@ -3220,7 +3220,7 @@
     "@backstage/plugin-permission-common" "^0.7.7"
     "@kubernetes/client-node" "0.18.1"
 
-"@backstage/plugin-kubernetes@^0.9.1", "@backstage/plugin-kubernetes@^0.9.3":
+"@backstage/plugin-kubernetes@^0.9.3":
   version "0.9.3"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-kubernetes/-/plugin-kubernetes-0.9.3.tgz#75b5d50b8338e35dbd9b8d1bc2c1fb7521ac7823"
   integrity sha512-gLQ6VZKDqZofMySV4ZJwLUNqedySRH4I1vaT37kl+cdJr62ingpfhqFdliwZyecauslxLfidZhq3KzaPm0hTsg==
@@ -3836,13 +3836,6 @@
     "@types/react" "^16.13.1 || ^17.0.0"
     cross-fetch "^3.1.5"
     zen-observable "^0.10.0"
-
-"@backstage/theme@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@backstage/theme/-/theme-0.3.0.tgz#453f1200578dac1a9e65182cccceb6e5bac14b50"
-  integrity sha512-em6tubxECvYBEJrboPGwc0pEtt0BZD0ujPSHbxXMslUfhpMfGELYvfupKmegm//iQl8D6wP8D/B6tIMx5YvjtQ==
-  dependencies:
-    "@material-ui/core" "^4.12.2"
 
 "@backstage/theme@^0.4.1":
   version "0.4.1"
@@ -8295,18 +8288,18 @@
     "@uiw/codemirror-extensions-basic-setup" "4.21.3"
     codemirror "^6.0.0"
 
-"@weaveworksoss/backstage-plugin-flux@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@weaveworksoss/backstage-plugin-flux/-/backstage-plugin-flux-0.8.0.tgz#a63d4baff7dc26ce27b62ad44ef27666c831eb4f"
-  integrity sha512-qtfPm1lSyvmBQTpCPFy+i//iPdEJLzHFPrxGU8pgL9v2dX2Ts+ovdGAKGeFive020V5UdpBo8w694KuICK+YeA==
+"@weaveworksoss/backstage-plugin-flux@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@weaveworksoss/backstage-plugin-flux/-/backstage-plugin-flux-0.8.1.tgz#9e35ea959d6a49fe98c2b250233ae9de01415a26"
+  integrity sha512-3pC0jY5gRD30EZItkojSbBeWnCq5JxHG7Xj6f1ZixeS5Sc39Ro3Ctyl+/Ms3kwfSdQXQpL1+C9YZ5ih+L2n4MA==
   dependencies:
-    "@backstage/catalog-model" "^1.3.0"
-    "@backstage/core-components" "^0.13.1"
-    "@backstage/core-plugin-api" "^1.5.1"
-    "@backstage/plugin-catalog-react" "^1.6.0"
-    "@backstage/plugin-kubernetes" "^0.9.1"
-    "@backstage/plugin-kubernetes-common" "^0.6.3"
-    "@backstage/theme" "^0.3.0"
+    "@backstage/catalog-model" "^1.4.1"
+    "@backstage/core-components" "^0.13.3"
+    "@backstage/core-plugin-api" "^1.5.3"
+    "@backstage/plugin-catalog-react" "^1.8.0"
+    "@backstage/plugin-kubernetes" "^0.9.3"
+    "@backstage/plugin-kubernetes-common" "^0.6.5"
+    "@backstage/theme" "^0.4.1"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
     "@material-ui/lab" "4.0.0-alpha.61"
@@ -8757,7 +8750,7 @@ anymatch@^3.0.3, anymatch@~3.1.2:
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
     "@roadiehq/backstage-plugin-github-pull-requests" "^2.5.11"
-    "@weaveworksoss/backstage-plugin-flux" "^0.8.0"
+    "@weaveworksoss/backstage-plugin-flux" "^0.8.1"
     history "^5.0.0"
     react "^17.0.2"
     react-dom "^17.0.2"
