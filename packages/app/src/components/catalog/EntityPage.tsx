@@ -69,6 +69,7 @@ import {
   EntityFluxHelmRepositoriesCard,
   EntityFluxOCIRepositoriesCard,
   EntityFluxDeploymentsCard,
+  EntityFluxImagePoliciesCard,
 } from '@weaveworksoss/backstage-plugin-flux';
 
 const techdocsContent = (
@@ -172,6 +173,9 @@ const serviceEntityPage = (
     <EntityLayout.Route path="/weaveworks-flux" title="Flux Sources">
       <Grid container spacing={3} alignItems="stretch">
         <h2>You can mix and match components on a page - add the Cards for the Flux resources you use!</h2>
+        <Grid item md={12}>
+          <EntityFluxImagePoliciesCard />
+        </Grid>
         <Grid item md={12}>
           <EntityFluxHelmRepositoriesCard />
         </Grid>

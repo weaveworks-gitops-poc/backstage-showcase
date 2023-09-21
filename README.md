@@ -13,7 +13,7 @@ You will need a GitHub account, and a Kubernetes cluster with a bare minimum of 
 If you don't have Flux installed this will install the minimum set of resources:
 
 ```sh
-flux install --components source-controller,kustomize-controller,helm-controller
+flux install --components source-controller,kustomize-controller,helm-controller --components-extra=image-reflector-controller
 ```
 
 You will also need an active LTS release of `node.js` installed on your local machine, i.e. you must have Node 16 or 18 installed.

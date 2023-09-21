@@ -1,0 +1,26 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: carts-service-podinfo-repository
+  namespace: backstage
+  labels:
+    backstage.io/kubernetes-id: carts-service
+spec:
+  image: stefanprodan/podinfo
+  interval: 1h
+  provider: generic
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: carts-service-podinfo-policy
+  namespace: backstage
+  labels:
+    backstage.io/kubernetes-id: carts-service
+spec:
+  imageRepositoryRef:
+    name: carts-service-podinfo-repository
+  policy:
+    semver:
+      range: 6.4.x

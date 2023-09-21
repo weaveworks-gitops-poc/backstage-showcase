@@ -1,13 +1,14 @@
 resources:
- - namespace.yaml
- - carts-cronjob.yaml
- - cluster-role-binding.yaml
- - sync-cluster-role.yaml
- - sync-cluster-role-binding.yaml
- - secret.yaml
- - service-account.yaml
- - catalogue-service-podinfo.yaml
- - verified-oci-repository.yaml
- - payments-service-cronjob.yaml
- - verified-git-repository.yaml
- - shipping-service-kustomization.yaml
+- namespace.yaml
+- carts-cronjob.yaml
+- cluster-role-binding.yaml
+- sync-cluster-role.yaml
+- sync-cluster-role-binding.yaml
+- secret.yaml
+- service-account.yaml
+- catalogue-service-podinfo.yaml
+- verified-oci-repository.yaml
+- payments-service-cronjob.yaml
+- verified-git-repository.yaml
+- shipping-service-kustomization.yaml
+- carts-service-image-policy.yaml
