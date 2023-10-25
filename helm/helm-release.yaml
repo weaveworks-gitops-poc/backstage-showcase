@@ -20,9 +20,9 @@ spec:
     backstage:
       image:
         # NOTE: YOU MUST CHANGE THESE!
-        registry: # e.g. docker.io
-        repository: # e.g. my-org/my-repo
-        tag: # e.g. 3e3d613
+        registry: docker.io
+        repository: bigkevmcd/backstage
+        tag: a917097
       # extraAppConfig:
       #   - filename: app-config.local.yaml
       #     configMapRef: backstage-app-config
@@ -36,3 +36,6 @@ spec:
     - name: BASE_URL
       # NOTE YOU MUST CHANGE THIS!
       value: http://localhost:7007/
+    # Optional
+    # - name:  WEAVE_GITOPS_URL
+    #   value: http://example.com/

@@ -9,8 +9,8 @@ build:
 	yarn build:backend --config ../../app-config.kubernetes.yaml
 
 .PHONY: docker-build
-docker-build: build
-	docker build . -f packages/backend/Dockerfile -t ${IMG}
+docker-build:
+	docker build . -f ./Dockerfile -t ${IMG}
 
 .PHONY: docker-push
 docker-push: ## Push docker image with the manager.
