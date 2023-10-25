@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: backstage
-      version: 1.2.0
+      version: 1.5.0
       sourceRef:
         kind: HelmRepository
         name: backstage-charts
@@ -19,9 +19,9 @@ spec:
     # See the chart documentation for the values below
     backstage:
       image:
-        registry: # insert the registry e.g. ghcr.io
-        repository: # path to the repository
-        tag: # to be used
+        registry: # e.g. docker.io
+        repository: # e.g. my-user/backstage
+        tag: # e.g. 3af880b
       # extraAppConfig:
       #   - filename: app-config.local.yaml
       #     configMapRef: backstage-app-config
