@@ -10,7 +10,7 @@ build:
 
 .PHONY: docker-build
 docker-build:
-	docker build . -f ./Dockerfile -t ${IMG}
+	docker build . -f ./Dockerfile --no-cache -t ${IMG}
 
 .PHONY: docker-push
 docker-push: ## Push docker image with the manager.
